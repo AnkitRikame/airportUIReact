@@ -1,0 +1,178 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-table100 {
+	width: 100%;
+	min-height: 100%;
+	height: auto;
+	background: #fff;
+	/* background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+	background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+	background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+	background: linear-gradient(45deg, #4158d0, #c850c0); */
+
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 13px 30px;
+}
+
+.wrap-table100 {
+	width: 1170px;
+	/* border: 1px solid red; */
+}
+
+table tbody tr:nth-child(odd) {
+	background-color: #f4f4f4;
+}
+table {
+	border-spacing: 1;
+	border-collapse: collapse;
+	background: #fff;
+	/* border-radius: 10px; */
+	overflow: hidden;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+table * {
+	position: relative;
+}
+
+table td,
+table th {
+	padding-left: 8px;
+}
+table thead tr {
+	height: 60px;
+	background: #e7e7e7;
+}
+table tbody tr {
+	height: 50px;
+}
+table tbody tr:last-child {
+	border: 0;
+}
+table td,
+table th {
+	text-align: left;
+}
+/* table td.l,
+table th.l {
+	text-align: right;
+}
+table td.c,
+table th.c {
+	text-align: center;
+}
+table td.r,
+table th.r {
+	text-align: center;
+} */
+
+.table100-head th {
+	/* font-family: OpenSans-Regular; */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #000;
+
+	line-height: 1.5;
+	font-weight: bold;
+}
+
+tbody tr {
+	/* font-family: OpenSans-Regular; */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	/* color: #808080; */
+	line-height: 1.5;
+	font-weight: unset;
+}
+
+
+/* table tbody tr:nth-child(odd) { */
+	table tr:hover{
+	/* color: #555555; */
+	background-color: #e5e2e2 !important;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+	table {
+		display: block;
+	}
+	table > *,
+	table tr,
+	table td,
+	table th {
+		display: block;
+	}
+	table thead {
+		display: none;
+	}
+	table tbody tr {
+		height: auto;
+		padding: 37px 0;
+	}
+	table thead {
+		padding-left: 40% !important;
+		margin-bottom: 24px;
+	}
+	table tbody tr td {
+		padding-left: 40% !important;
+		margin-bottom: 24px;
+	}
+
+	table tbody tr td:last-child {
+		margin-bottom: 0;
+	}
+	table tbody tr td:before {
+		/* font-family: OpenSans-Regular; */
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 14px;
+		color: #000;
+		line-height: 1.5;
+		font-weight: unset;
+		position: absolute;
+		width: 40%;
+		left: 30px;
+		top: 0;
+	}
+	table tbody tr td:nth-child(1):before {
+		content: 'Name';
+	}
+	table tbody tr td:nth-child(2):before {
+		content: 'ICAO';
+	}
+	table tbody tr td:nth-child(3):before {
+		content: 'IATA';
+	}
+	table tbody tr td:nth-child(4):before {
+		content: 'Elev.';
+	}
+	table tbody tr td:nth-child(5):before {
+		content: 'Lat.';
+	}
+	table tbody tr td:nth-child(6):before {
+		content: 'Long.';
+	}
+	table tbody tr td:nth-child(6):before {
+		content: 'Type.';
+	}
+}
+
+@media (max-width: 720px) {
+	.container-table100 {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
