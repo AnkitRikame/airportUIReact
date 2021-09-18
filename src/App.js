@@ -5,10 +5,7 @@ import Search from './Components/Search';
 import Table from './Components/Table';
 import './index.css';
 
-
-
 const Context = createContext();
-
 const App = () => {
     const [searchterm, setSearchTerm] = useState("");
 	const [filterdata, setFilterData] = useState(AirportJsonData);
