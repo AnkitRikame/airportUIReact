@@ -1,7 +1,6 @@
-import React, { useState,useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './CssFolder/Search.css';
-import {Context} from "../App"
-
+import { Context } from '../App';
 
 // const context = useContext(Context);
 
@@ -9,56 +8,53 @@ const Search = (props) => {
 	const [searchterm, setSearchTerm] = useState('');
 
 	// column array
-	const [columnArray, setColumnArray] = useState([
-		"small" , 
-		"medium",
-		"large",
-		"heliport",
-		"closed",
-		"favourites"
-	]);
+	const [columnArray, setColumnArray] = useState(['small', 'medium', 'large', 'heliport', 'closed', 'favourites']);
 
 	const context = useContext(Context);
 	// checked state
-	const [checked,setChecked] = useState([]);
+	const [checked, setChecked] = useState([]);
 
 	// checked useeffect
 	useEffect(() => {
-		if(checked.length > 0){
-			console.log("Checked added " + checked);
-			context.findCheckedBoxes(checked);	
+		if (checked.length >= 0) {
+			console.log('Checked added ' + checked);
+			context.findCheckedBoxes(checked);
 		}
 	}, [checked]);
-
 
 	return (
 		<div className="search_MainDiv">
 			<h2 className="search_MainDiv__Heading">
 				Filter<span className="search_MainDiv__span"> airports</span>
 			</h2>
-			<div className="search_MainDiv__Container" >
-			<h4 className="search_MainDiv__Type">Type</h4>
-				{
-					columnArray && columnArray.map((e,i) => {
+			<div className="search_MainDiv__Container">
+				<h4 className="search_MainDiv__Type">Type</h4>
+				{columnArray &&
+					columnArray.map((e, i) => {
 						return (
 							<>
-							{/* <h2 className="search_MainDiv__Type">Type</h2> */}
-							<div className="search_MainDiv__filterCheckbox" key={i} >
-								<label>
-									<input type="checkbox" id="small" name="small" value="small" 
-									checked={checked.includes(e)} 
-									onChange={(e1) => {
-									const checked1 = checked.includes(e)
-									setChecked(prev => checked1 ? prev.filter((sc) => sc !== e ) : [...prev,e]);
-									}} 
-									/>
-									{e}
-								</label>
-							</div>
+								{/* <h2 className="search_MainDiv__Type">Type</h2> */}
+								<div className="search_MainDiv__filterCheckbox" key={i}>
+									<label>
+										<input
+											type="checkbox"
+											id="small"
+											name="small"
+											value="small"
+											checked={checked.includes(e)}
+											onChange={(e1) => {
+												const checked1 = checked.includes(e);
+												setChecked((prev) =>
+													checked1 ? prev.filter((sc) => sc !== e) : [...prev, e]
+												);
+											}}
+										/>
+										{e}
+									</label>
+								</div>
 							</>
-						)
-					})
-				}
+						);
+					})}
 
 				{/* <div className="search_MainDiv__filterCheckbox">
 					<h2 className="search_MainDiv__Type">Type</h2>
@@ -83,7 +79,7 @@ const Search = (props) => {
 						className="search"
 						placeholder="Search"
 						type="text"
-						value = {searchterm}
+						value={searchterm}
 						onChange={(e) => {
 							setSearchTerm(e.target.value);
 							props.searchCallBack(e.target.value);
