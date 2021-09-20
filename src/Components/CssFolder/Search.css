@@ -70,11 +70,8 @@
 }
 
 .search_MainDiv__filterCheckbox > *input {
-	background-color: green !important;
-}
-
-input[type="checkbox"] {
-	background-color: green !important;
+	background-color: #fff !important;
+	color: #000;
 }
 
 @media (max-width: 720px) {

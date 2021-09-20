@@ -21,7 +21,7 @@ const App = () => {
 
 	// showPagination Function
 	const showPagination = () => {
-		// Logic for displaying current records ....
+		// Logic for displaying pagination for current records ....
 		const indexOfLastRecord = currentpage * recordsPerPage;
 		const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
 		const currentRecords = filterdata.slice(
@@ -41,6 +41,7 @@ const App = () => {
 		setSearchTerm(val);
 	};
 
+	// Callback for FilterSearch
 	const filteredCallBack = (fd) => {
 		setFilterData(fd);
 	};
@@ -74,14 +75,14 @@ const App = () => {
 		let filtercopy = searchterm.length > 0 ? filterdata : AirportJsonData;
 		let filtered = [];
 
-		if (checkboxes.length == 0) {
+		if (checkboxes.length === 0) {
 			setFilterData(filtercopy);
 			setCurrentPage(1);
 		} else if (checkboxes.length > 0) {
 			filtered = filtercopy.filter((checkboxMatch) => {
 				let forFilter = [];
 				for (let checkbox of checkboxes) {
-					if (checkboxMatch.type == checkbox) {
+					if (checkboxMatch.type === checkbox) {
 						forFilter.push(checkboxMatch);
 					}
 				}

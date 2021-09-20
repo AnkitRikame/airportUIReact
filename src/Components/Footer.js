@@ -1,6 +1,5 @@
 import React from "react";
 import "./CssFolder/Footer.css";
-// import MenuIcon from "@material-ui/icons/Menu";
 const Footer = (props) => {
 	return (
 		<>

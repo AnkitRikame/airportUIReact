@@ -24,7 +24,6 @@ const Search = (props) => {
 	// checked useeffect
 	useEffect(() => {
 		if (checked.length >= 0) {
-			// console.log("Checked added " + checked);
 			context.findCheckedBoxes(checked);
 		}
 	}, [checked]);
@@ -37,6 +36,7 @@ const Search = (props) => {
 				</h2>
 				<img
 					className="logo"
+					alt="logo image"
 					src="https://static.thenounproject.com/png/2963655-200.png"
 				/>
 			</div>
