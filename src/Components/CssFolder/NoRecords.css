@@ -1,0 +1,10 @@
+.noRecords {
+	padding-top: 35px;
+}
+
+@media (max-width: 720px) {
+	.noRecords h1 {
+		font-size: 1em;
+		text-align: center;
+	}
+}

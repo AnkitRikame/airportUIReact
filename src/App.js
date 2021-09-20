@@ -4,6 +4,7 @@ import Search from "./Components/Search";
 import Footer from "./Components/Footer";
 import Table from "./Components/Table";
 import "./index.css";
+import "./App.css";
 
 const Context = createContext();
 const App = () => {
@@ -11,20 +12,14 @@ const App = () => {
 	const [filterdata, setFilterData] = useState(AirportJsonData);
 	const [checkboxes, setCheckboxes] = useState([]);
 	const [paginatedata, setPaginatedata] = useState([]);
-
-	// states for pagination
-
 	const [currentpage, setCurrentPage] = useState(1);
 	const [recordsPerPage, setRecordsPerPage] = useState(4);
-
-	let a = currentpage * recordsPerPage + 1;
-	const [indexOfLastRecord, setIndexOfLastRecord] = useState(a);
-
-	let b = indexOfLastRecord - recordsPerPage;
-	const [indexOfFirstRecord, setIndexOfFirstRecord] = useState(b);
+	let currpage = currentpage * recordsPerPage + 1;
+	const [indexOfLastRecord, setIndexOfLastRecord] = useState(currpage);
+	let lastpage = indexOfLastRecord - recordsPerPage;
+	const [indexOfFirstRecord, setIndexOfFirstRecord] = useState(lastpage);
 
 	// showPagination Function
-
 	const showPagination = () => {
 		// Logic for displaying current records ....
 		const indexOfLastRecord = currentpage * recordsPerPage;
@@ -33,7 +28,6 @@ const App = () => {
 			indexOfFirstRecord,
 			indexOfLastRecord
 		);
-		console.log("currentRecords", currentRecords, "filterdata", filterdata);
 
 		// setFilterData(currentRecords);
 		setPaginatedata(currentRecords);
@@ -51,18 +45,16 @@ const App = () => {
 		setFilterData(fd);
 	};
 
-	// showLeftRecord
+	// showLeftRecord setCurrent Page to Left
 	const showLeftRecord = () => {
-		console.log("Left clicked");
 		if (currentpage > 1) {
 			setCurrentPage(currentpage - 1);
 		}
 	};
 
-	// showRightRecord
+	// showRightRecord setCurrent Page to Right
 	const showRightRecord = () => {
 		if (filterdata.length > indexOfLastRecord) {
-			console.log("Right clicked");
 			setCurrentPage(currentpage + 1);
 		}
 	};
@@ -72,11 +64,12 @@ const App = () => {
 		showPagination();
 	}, []);
 
-	// useEffect for byDefault 4 records .....
+	// useEffect for showing byDefault 4 records .....
 	useEffect(() => {
 		showPagination();
 	}, [searchterm, filterdata, currentpage]);
 
+	// useEffect for showing checkbox is checked and filter the "Type" column
 	useEffect(() => {
 		let filtercopy = searchterm.length > 0 ? filterdata : AirportJsonData;
 		let filtered = [];
@@ -107,11 +100,10 @@ const App = () => {
 	// checked boxes
 	const findCheckedBoxes = (cb) => {
 		setCheckboxes(cb);
-		console.log(" *********************", cb);
 	};
 
+	// useEffect for search query matches with All records and filter the table records
 	useEffect(() => {
-		// let filterdData = [];
 		if (searchterm !== "") {
 			let filterdData = AirportJsonData.filter((val) => {
 				if (searchterm === "") {
@@ -151,6 +143,7 @@ const App = () => {
 			<Search searchCallBack={searchCallBack} />
 			<Table finalFilter={paginatedata} />
 
+			{/* Footer conditional showing and hiding based on records found */}
 			{paginatedata.length > 0 ? (
 				<Footer
 					showLeftRecord={showLeftRecord}

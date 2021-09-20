@@ -10,15 +10,6 @@
 	min-height: 100%;
 	height: auto;
 	background: #fff;
-	/* background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
-	background: -o-linear-gradient(45deg, #4158d0, #c850c0);
-	background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
-	background: linear-gradient(45deg, #4158d0, #c850c0); */
-
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -28,7 +19,6 @@
 
 .wrap-table100 {
 	width: 1170px;
-	/* border: 1px solid red; */
 }
 
 table tbody tr:nth-child(odd) {
@@ -38,7 +28,6 @@ table {
 	border-spacing: 1;
 	border-collapse: collapse;
 	background: #fff;
-	/* border-radius: 10px; */
 	overflow: hidden;
 	width: 100%;
 	margin: 0 auto;
@@ -66,18 +55,6 @@ table td,
 table th {
 	text-align: left;
 }
-/* table td.l,
-table th.l {
-	text-align: right;
-}
-table td.c,
-table th.c {
-	text-align: center;
-}
-table td.r,
-table th.r {
-	text-align: center;
-} */
 
 .table100-head th {
 	/* font-family: OpenSans-Regular; */
@@ -93,15 +70,12 @@ tbody tr {
 	/* font-family: OpenSans-Regular; */
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 15px;
-	/* color: #808080; */
+
 	line-height: 1.5;
 	font-weight: unset;
 }
 
-
-/* table tbody tr:nth-child(odd) { */
-	table tr:hover{
-	/* color: #555555; */
+table tr:hover {
 	background-color: #e5e2e2 !important;
 	cursor: pointer;
 }
@@ -148,25 +122,25 @@ tbody tr {
 		top: 0;
 	}
 	table tbody tr td:nth-child(1):before {
-		content: 'Name';
+		content: "Name";
 	}
 	table tbody tr td:nth-child(2):before {
-		content: 'ICAO';
+		content: "ICAO";
 	}
 	table tbody tr td:nth-child(3):before {
-		content: 'IATA';
+		content: "IATA";
 	}
 	table tbody tr td:nth-child(4):before {
-		content: 'Elev.';
+		content: "Elev.";
 	}
 	table tbody tr td:nth-child(5):before {
-		content: 'Lat.';
+		content: "Lat.";
 	}
 	table tbody tr td:nth-child(6):before {
-		content: 'Long.';
+		content: "Long.";
 	}
 	table tbody tr td:nth-child(6):before {
-		content: 'Type.';
+		content: "Type.";
 	}
 }
 

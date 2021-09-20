@@ -1,48 +1,17 @@
-import React, { useContext, useState, useEffect } from 'react';
-// import AirportJsonData from '../jsonData/airport.json';
-import NoRecords from '../Components/NoRecords';
-import './CssFolder/Table.css';
-import { Context } from '../App';
+import React, { useContext, useState } from "react";
+import NoRecords from "../Components/NoRecords";
+import "./CssFolder/Table.css";
+import { Context } from "../App";
 
 const Table = (props) => {
 	const [filterdDataState, setfilterdDataState] = useState([]);
 
-	useEffect(() => {
-		console.log('props.finalFilter value is :', props.finalFilter);
-	});
-
-	// useEffect(() => {
-	// 	console.log("props.searchterm is :" + props.searchterm);
-	// },[props.searchterm])
-
 	const context = useContext(Context);
-
-	// useEffect(() => {
-	// 	const filterdData = AirportJsonData.filter((val) => {
-	// 		if (props.searchterm === "") {
-	// 			return val;
-	// 		}
-	// 		else if(val.name?.toLowerCase().includes(props.searchterm?.toLowerCase()) ||
-	// 			val.icao?.toLowerCase().includes(props.searchterm?.toLowerCase()) ||
-	// 			val.iata?.toLowerCase().includes(props.searchterm?.toLowerCase()) ||
-	// 			val.elevation?.toString()?.toLowerCase().includes(props.searchterm?.toLowerCase()) ||
-	// 			val.type?.toLowerCase().includes(props.searchterm?.toLowerCase()) ||
-	// 			val.latitude?.toString()?.toLowerCase().includes(props?.searchterm.toLowerCase()) ||
-	// 			val.longitude?.toString()?.toLowerCase().includes(props?.searchterm.toLowerCase())
-	// 		){
-	// 			return val;
-	// 		}
-	// 	})
-	// 	setfilterdDataState(filterdData)
-	// 	context.filteredCallBack(filterdData);
-	// }, [props.searchterm])
-
 	return (
 		<>
 			<div className="container-table100">
 				<div className="wrap-table100">
 					<div className="table100">
-						{/* <h1>Table Component</h1> */}
 						{/* Table Component Starts here*/}
 						<table>
 							<thead>
@@ -50,9 +19,9 @@ const Table = (props) => {
 									<th>Name</th>
 									<th>ICAO</th>
 									<th>IATA</th>
-									<th>Elev</th>
-									<th>Lat</th>
-									<th>Long</th>
+									<th>Elev.</th>
+									<th>Lat.</th>
+									<th>Long.</th>
 									<th>Type</th>
 								</tr>
 							</thead>
@@ -78,8 +47,6 @@ const Table = (props) => {
 							{/* Table body ends here */}
 						</table>
 						{/* Table Component ends here*/}
-
-						{/*  */}
 					</div>
 				</div>
 			</div>

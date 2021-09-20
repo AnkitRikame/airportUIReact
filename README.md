@@ -1,3 +1,23 @@
+# Filter Airports UI by - Ankit Rikame
+
+# Overview of the Project
+
+# This filter Airport Ui is created with ReactJs Library
+
+1.  All styling were purely styled by css only.
+
+2.  Hooks used in UI to maintain state were:
+    useState
+    useEffect
+    useContext
+
+3.  App structure having components hierarchy is :
+    App.js
+    Search.js
+    Table.js
+    Footer.js
+    NoRecords.js
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
